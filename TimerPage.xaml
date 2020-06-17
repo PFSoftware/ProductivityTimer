@@ -1,0 +1,56 @@
+﻿<Page x:Class="PFSoftware.ProductivityTimer.TimerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      Style="{StaticResource PageStyle}"
+      Width="1032"
+      Height="600"
+      Title="Productivity Timer">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Text="Work" TextAlignment="Center" Margin="0,0,0,10" />
+        <Border Style="{StaticResource BorderSurround}" Grid.Column="0" Grid.Row="1" BorderThickness="1,1,1,1">
+            <TextBlock Text="Current:" TextAlignment="Center" />
+        </Border>
+        <Border Style="{StaticResource BorderSurround}" Grid.Column="1" Grid.Row="1" BorderThickness="0,1,1,1">
+            <TextBlock Text="Total:" TextAlignment="Center" />
+        </Border>
+        <Border Style="{StaticResource BorderSurround}" Grid.Column="0" Grid.Row="2" BorderThickness="1,0,1,1" Margin="0,0,0,10">
+            <TextBlock Text="{Binding CurrentWorkTimeToString}" TextAlignment="Center" />
+        </Border>
+        <Border Style="{StaticResource BorderSurround}" Grid.Column="1" Grid.Row="2" BorderThickness="0,0,1,1" Margin="0,0,0,10">
+            <TextBlock Text="{Binding TotalWorkTimeToString}" TextAlignment="Center" />
+        </Border>
+        <TextBlock Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Text="Break" TextAlignment="Center" Margin="0,0,10,10" />
+        <Border Style="{StaticResource BorderSurround}" Grid.Column="0" Grid.Row="4" BorderThickness="1,1,1,1">
+            <TextBlock Text="Current:" TextAlignment="Center" />
+        </Border>
+        <Border Style="{StaticResource BorderSurround}" Grid.Column="1" Grid.Row="4" BorderThickness="0,1,1,1">
+            <TextBlock Text="Total:" TextAlignment="Center" />
+        </Border>
+        <Border Style="{StaticResource BorderSurround}" Grid.Column="0" Grid.Row="5" BorderThickness="1,0,1,1" Margin="0,0,0,10">
+            <TextBlock Text="{Binding CurrentBreakTimeToString}" TextAlignment="Center" />
+        </Border>
+        <Border Style="{StaticResource BorderSurround}" Grid.Column="1" Grid.Row="5" BorderThickness="0,0,1,1" Margin="0,0,0,10">
+            <TextBlock Text="{Binding TotalBreakTimeToString}" TextAlignment="Center" />
+        </Border>
+        <Button x:Name="BtnStartWork" Grid.Column="0" Grid.Row="6" Width="250" Content="_Start" Click="BtnStartWork_Click" Margin="0,0,5,10" />
+        <Button x:Name="BtnStartBreak" Grid.Column="1" Grid.Row="6" Width="250" Content="_Break" IsEnabled="False" Click="BtnStartBreak_Click" Margin="5,0,0,10" />
+        <Button x:Name="BtnStopWork" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Width="250" Content="S_top" IsEnabled="False" Click="BtnStopWork_Click" />
+    </Grid>
+</Page>
